@@ -1,0 +1,43 @@
+<html ng-app="App">
+
+<head>
+    <meta charset="utf-8">
+    <title>Intslacion de angular sj</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-controller="controlador1">
+        <button ng-click="clickSimple()">Boton!!</button>
+        <button ng-dblclick="clickDoble()">Boton doble!!</button>
+
+        <img src="http://lorempixel.com/250/100/" ng-mouseleave="dejarImagen()" ng-mouseenter="entrarImagen()">
+
+        <h1>{{ evento }}</h1>
+    </div>
+
+    <script>
+        var miApp = angular.module("App", [])
+
+        miApp.controller("controlador1", ["$scope", function ($scope) {
+
+            $scope.clickSimple = function () {
+                $scope.evento = "click";
+            }
+
+            $scope.clickDoble = function () {
+                $scope.evento = " doble click";
+            }
+
+            $scope.dejarImagen = function () {
+                $scope.evento = " Has dejado en la imagen";
+            }
+
+            $scope.entrarImagen = function () {
+                $scope.evento = " Has entrado en la imagen";
+            }
+    }])
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<html ng-app="App">
+
+<head>
+    <meta charset="utf-8">
+    <title>Intslacion de angular sj</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-controller="controlador1">
+        <h1>Nombres</h1>
+        <ul>
+            <li ng-repeat=" nombre in nombresSimples">
+                {{ nombre }}
+            </li>
+        </ul>
+        <h1>Heroes de accion</h1>
+        <ul>
+            <li ng-repeat=" heroe in heroes">
+                {{ heroe.nombre }} {{ heroe.apellidos }}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var miApp = angular.module("App", [])
+
+        miApp.controller("controlador1", ["$scope", function ($scope) {
+
+            $scope.nombresSimples = ["Paco", "jose", "mnaria"];
+
+            $scope.heroes = [
+                { nombre: "Arlond" , apellidos:  "Shasenagger" },
+                { nombre: "Chuck" , apellidos:  "Norris" },
+                { nombre: "Jose" , apellidos: "Antonio" }
+            ]
+
+    }])
+    </script>
+</body>
+
+</html>

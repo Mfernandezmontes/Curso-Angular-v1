@@ -1,0 +1,59 @@
+<html ng-app="App">
+
+<head>
+    <meta charset="utf-8">
+    <title>Intslacion de angular sj</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+    <style>
+        .contenedor {
+            border: 5px solid #000000;
+            text-align: center;
+            margin: auto;
+        }
+        
+        .angular {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="controlador1">
+        <div class="contenedor">
+            <p ng-style="estilos">cosas bonitas</p>
+            <p ng-style="claseEspecial">Clase especial</p>
+            <button ng-click="cambiarEstilos()">Cambiar css</button>
+            <button ng-click="cambiarClases()">Clase especial</button>
+            <button ng-click="reiniciarClases()">Reiniciar Clases</button>
+        </div>
+    </div>
+
+    <script>
+        var miApp = angular.module("App", [])
+
+        miApp.controller("controlador1", ["$scope", function ($scope) {
+
+            $scope.cambiarEstilos = function () {
+
+                $scope.estilos = {
+                    "background": "blue"
+                }
+            }
+
+            $scope.cambiarClases = function () {
+
+                $scope.claseEspecial = "angular";
+            }
+
+            $scope.reiniciarClases = function () {
+
+                $scope.estilos = "";
+                $scope.claseEspecial = "";
+            }
+
+    }])
+    </script>
+</body>
+
+</html>

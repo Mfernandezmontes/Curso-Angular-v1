@@ -1,0 +1,17 @@
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title>Intslacion de angular sj</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    </head>
+    <body>
+        
+        <h1>Mi tienda de verduras</h1>
+        <ul>
+            <li>apio {{ 50 | currency }}</li>
+            <li>brócoli {{ 50 | currency:"€" }}</li>
+            <li>patatas {{ 50 + 10 | currency:"$"}} importada de {{ 'InDiA' | uppercase }}</li>
+        </ul>
+        
+    </body>
+</html>

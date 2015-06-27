@@ -1,0 +1,39 @@
+<html ng-app="App">
+
+<head>
+    <meta charset="utf-8">
+    <title>Intslacion de angular sj</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<div ng-controller="controlador1">
+    nombre: {{ nombre }}
+</div>
+
+<div ng-controller="controlador2">
+    nombre: {{ nombre }}
+</div>
+
+<div></div>
+
+<script>
+    var miAplicacion = angular.module("App", [])
+
+    miAplicacion.controller("controlador1", ["$scope", function ($scope) {
+
+        $scope.nombre = "controlador1";
+
+
+        }])
+
+    miAplicacion.controller("controlador2", ["$scope", function ($scope) {
+
+        $scope.nombre = "controlador2";
+
+
+        }]);
+    
+    
+</script>
+</body>
+
+</html>
